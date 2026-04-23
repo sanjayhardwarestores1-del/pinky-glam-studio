@@ -137,11 +137,16 @@ const Index = () => {
       {/* ABOUT PREVIEW */}
       <section className="container py-20 md:py-28 grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
-          <div className="relative aspect-square rounded-[2rem] bg-gradient-to-br from-rose-gold via-blush to-champagne overflow-hidden shadow-luxe">
-            <div className="absolute inset-0 grid place-items-center">
-              <Sparkles className="w-24 h-24 text-background/40" />
-            </div>
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/30 to-transparent p-8">
+          <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-luxe">
+            <img
+              src={IMAGES.aboutArtist}
+              alt="Pinky — founder and lead makeup artist of Pinky Makeover Studio Raipur"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+              width={1024}
+              height={1024}
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/60 to-transparent p-8">
               <p className="font-serif italic text-2xl text-background">— Pinky</p>
               <p className="text-background/80 text-sm">Founder & Lead Artist</p>
             </div>
