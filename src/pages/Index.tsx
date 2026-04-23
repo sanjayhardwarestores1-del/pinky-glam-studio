@@ -186,12 +186,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <Reveal key={s.slug} delay={i * 80}>
-                <Card className="group h-full p-8 border-border/60 bg-background/80 backdrop-blur-sm hover-lift overflow-hidden relative">
-                  <div className={`absolute -top-20 -right-20 w-48 h-48 rounded-full bg-gradient-to-br ${s.hue} opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
-                  <div className="relative">
-                    <Sparkles className="w-7 h-7 text-primary mb-5" />
+                <Card className="group h-full border-border/60 bg-background/80 backdrop-blur-sm hover-lift overflow-hidden relative pt-0">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={serviceImages[s.slug]}
+                      alt={`${s.title} by Pinky Makeover Studio Raipur`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      width={1024}
+                      height={768}
+                    />
+                  </div>
+                  <div className="p-7">
                     <h3 className="font-serif text-2xl mb-3">{s.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.short}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{s.short}</p>
                     <Link to="/services" className="story-link text-sm font-medium text-primary inline-flex items-center gap-1">
                       Explore <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
