@@ -8,6 +8,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { services } from "@/data/services";
 import { testimonials, stats, faqs } from "@/data/content";
 import { SITE, waLink } from "@/lib/site";
+import { IMAGES, serviceImages } from "@/lib/images";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Index = () => {
