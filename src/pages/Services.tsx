@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { services } from "@/data/services";
 import { waLink } from "@/lib/site";
+import { serviceImages } from "@/lib/images";
 
 const Services = () => (
   <>
@@ -34,10 +35,16 @@ const Services = () => (
       {services.map((s, i) => (
         <Reveal key={s.slug}>
           <article id={s.slug} className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-            <div className={`relative aspect-[4/5] rounded-[2rem] bg-gradient-to-br ${s.hue} shadow-luxe overflow-hidden`}>
-              <div className="absolute inset-0 grid place-items-center">
-                <Sparkles className="w-20 h-20 text-background/40" />
-              </div>
+            <div className="relative aspect-[4/5] rounded-[2rem] shadow-luxe overflow-hidden">
+              <img
+                src={serviceImages[s.slug]}
+                alt={`${s.keyword} — ${s.title} portfolio by Pinky Makeover Studio`}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+                width={1024}
+                height={1280}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur-sm rounded-2xl p-5">
                 <p className="text-xs uppercase tracking-[0.25em] text-primary">Ideal for</p>
                 <p className="font-serif text-lg mt-1">{s.ideal}</p>

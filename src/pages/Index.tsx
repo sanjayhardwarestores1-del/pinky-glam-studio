@@ -8,6 +8,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { services } from "@/data/services";
 import { testimonials, stats, faqs } from "@/data/content";
 import { SITE, waLink } from "@/lib/site";
+import { IMAGES, serviceImages } from "@/lib/images";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Index = () => {
@@ -95,15 +96,15 @@ const Index = () => {
 
           <Reveal delay={200}>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-blush via-champagne to-blush-deep shadow-luxe relative overflow-hidden">
-                <div className="absolute inset-6 rounded-[1.5rem] border border-background/40 bg-background/10 backdrop-blur-sm" />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center px-8">
-                    <Sparkles className="w-12 h-12 mx-auto text-rose-gold-deep mb-4 animate-float" />
-                    <p className="font-serif text-3xl text-foreground/80 italic">"Beauty begins<br/>the moment you decide<br/>to be yourself."</p>
-                    <p className="mt-4 text-xs uppercase tracking-[0.3em] text-foreground/60">— Coco Chanel</p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] rounded-[2rem] shadow-luxe relative overflow-hidden">
+                <img
+                  src={IMAGES.heroBride}
+                  alt="Soft-glam bridal makeup look by Pinky Makeover Studio in Raipur"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  width={1080}
+                  height={1350}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-luxe p-5 max-w-[200px] animate-float">
                 <Award className="w-6 h-6 text-primary mb-2" />
@@ -136,11 +137,16 @@ const Index = () => {
       {/* ABOUT PREVIEW */}
       <section className="container py-20 md:py-28 grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
-          <div className="relative aspect-square rounded-[2rem] bg-gradient-to-br from-rose-gold via-blush to-champagne overflow-hidden shadow-luxe">
-            <div className="absolute inset-0 grid place-items-center">
-              <Sparkles className="w-24 h-24 text-background/40" />
-            </div>
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/30 to-transparent p-8">
+          <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-luxe">
+            <img
+              src={IMAGES.aboutArtist}
+              alt="Pinky — founder and lead makeup artist of Pinky Makeover Studio Raipur"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+              width={1024}
+              height={1024}
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/60 to-transparent p-8">
               <p className="font-serif italic text-2xl text-background">— Pinky</p>
               <p className="text-background/80 text-sm">Founder & Lead Artist</p>
             </div>
@@ -180,12 +186,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <Reveal key={s.slug} delay={i * 80}>
-                <Card className="group h-full p-8 border-border/60 bg-background/80 backdrop-blur-sm hover-lift overflow-hidden relative">
-                  <div className={`absolute -top-20 -right-20 w-48 h-48 rounded-full bg-gradient-to-br ${s.hue} opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
-                  <div className="relative">
-                    <Sparkles className="w-7 h-7 text-primary mb-5" />
+                <Card className="group h-full border-border/60 bg-background/80 backdrop-blur-sm hover-lift overflow-hidden relative pt-0">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={serviceImages[s.slug]}
+                      alt={`${s.title} by Pinky Makeover Studio Raipur`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      width={1024}
+                      height={768}
+                    />
+                  </div>
+                  <div className="p-7">
                     <h3 className="font-serif text-2xl mb-3">{s.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.short}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{s.short}</p>
                     <Link to="/services" className="story-link text-sm font-medium text-primary inline-flex items-center gap-1">
                       Explore <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -207,22 +221,24 @@ const Index = () => {
         <Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              ["from-nude to-blush", "from-blush-deep to-rose-gold", "Bridal Glow"],
-              ["from-champagne to-ivory", "from-rose-gold to-blush-deep", "Soft Nude"],
-              ["from-blush to-champagne", "from-rose-gold-deep to-blush", "Editorial"],
-            ].map(([b, a, label], i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-soft hover-lift">
+              { before: IMAGES.before1, after: IMAGES.bridalSoftglam, label: "Bridal Glow" },
+              { before: IMAGES.before2, after: IMAGES.party, label: "Party Glam" },
+              { before: IMAGES.before3, after: IMAGES.editorial, label: "Editorial" },
+            ].map((it, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-soft hover-lift bg-card">
                 <div className="grid grid-cols-2">
-                  <div className={`aspect-[3/4] bg-gradient-to-br ${b} grid place-items-center`}>
-                    <span className="text-xs uppercase tracking-[0.3em] text-foreground/60">Before</span>
+                  <div className="aspect-[3/4] relative">
+                    <img src={it.before} alt={`Before ${it.label} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover grayscale-[15%]" width={1024} height={1280} />
+                    <span className="absolute bottom-2 left-2 text-[10px] uppercase tracking-[0.3em] text-background bg-foreground/40 backdrop-blur px-2 py-1 rounded">Before</span>
                   </div>
-                  <div className={`aspect-[3/4] bg-gradient-to-br ${a} grid place-items-center relative`}>
-                    <Sparkles className="absolute top-3 right-3 w-4 h-4 text-background" />
-                    <span className="text-xs uppercase tracking-[0.3em] text-background/90">After</span>
+                  <div className="aspect-[3/4] relative">
+                    <img src={it.after} alt={`After ${it.label} makeup by Pinky`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" width={1024} height={1280} />
+                    <Sparkles className="absolute top-2 right-2 w-4 h-4 text-background drop-shadow" />
+                    <span className="absolute bottom-2 right-2 text-[10px] uppercase tracking-[0.3em] text-background bg-primary/70 backdrop-blur px-2 py-1 rounded">After</span>
                   </div>
                 </div>
-                <div className="p-4 bg-card text-center">
-                  <p className="font-serif text-lg">{label}</p>
+                <div className="p-4 text-center">
+                  <p className="font-serif text-lg">{it.label}</p>
                 </div>
               </div>
             ))}
@@ -263,21 +279,15 @@ const Index = () => {
         />
         <Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {[
-              "from-blush to-rose-gold",
-              "from-champagne to-blush-deep",
-              "from-rose-gold to-blush",
-              "from-blush-deep to-champagne",
-              "from-nude to-blush",
-              "from-rose-gold-deep to-rose-gold",
-            ].map((g, i) => (
+            {[IMAGES.bridalTraditional, IMAGES.insta2, IMAGES.insta3, IMAGES.insta4, IMAGES.insta5, IMAGES.flatlay].map((src, i) => (
               <a
                 key={i}
                 href={SITE.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${g} hover-lift`}
+                className="group relative aspect-square rounded-2xl overflow-hidden hover-lift"
               >
+                <img src={src} alt={`Pinky Makeover Studio Instagram post ${i + 1}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={600} height={600} />
                 <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition bg-foreground/40">
                   <Instagram className="w-7 h-7 text-background" />
                 </div>

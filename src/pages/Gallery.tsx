@@ -3,23 +3,24 @@ import { Sparkles, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
+import { IMAGES } from "@/lib/images";
 
 const categories = ["All", "Bridal", "Party", "Nude", "Editorial"] as const;
 type Cat = typeof categories[number];
 
-const items: { cat: Exclude<Cat, "All">; label: string; hue: string }[] = [
-  { cat: "Bridal", label: "Traditional Red Bride", hue: "from-blush-deep to-rose-gold-deep" },
-  { cat: "Bridal", label: "Soft Glam Bride", hue: "from-blush to-champagne" },
-  { cat: "Bridal", label: "Reception Diva", hue: "from-rose-gold to-blush-deep" },
-  { cat: "Party", label: "Cocktail Glam", hue: "from-rose-gold-deep to-blush" },
-  { cat: "Party", label: "Sangeet Sparkle", hue: "from-blush-deep to-champagne" },
-  { cat: "Party", label: "Birthday Glow", hue: "from-rose-gold to-champagne" },
-  { cat: "Nude", label: "Engagement Nude", hue: "from-nude to-blush" },
-  { cat: "Nude", label: "Pre-Wedding Glow", hue: "from-champagne to-nude" },
-  { cat: "Nude", label: "Minimal Bride", hue: "from-blush to-nude" },
-  { cat: "Editorial", label: "High Fashion", hue: "from-rose-gold-deep to-blush-deep" },
-  { cat: "Editorial", label: "Magazine Cover", hue: "from-blush-deep to-rose-gold" },
-  { cat: "Editorial", label: "Avant-Garde", hue: "from-rose-gold to-blush" },
+const items: { cat: Exclude<Cat, "All">; label: string; src: string }[] = [
+  { cat: "Bridal", label: "Traditional Red Bride", src: IMAGES.bridalTraditional },
+  { cat: "Bridal", label: "Soft Glam Bride", src: IMAGES.bridalSoftglam },
+  { cat: "Bridal", label: "Reception Diva", src: IMAGES.airbrush },
+  { cat: "Party", label: "Cocktail Glam", src: IMAGES.party },
+  { cat: "Party", label: "Sangeet Sparkle", src: IMAGES.insta5 },
+  { cat: "Party", label: "Birthday Glow", src: IMAGES.light },
+  { cat: "Nude", label: "Engagement Nude", src: IMAGES.nude },
+  { cat: "Nude", label: "Pre-Wedding Glow", src: IMAGES.before1 },
+  { cat: "Nude", label: "Minimal Bride", src: IMAGES.before2 },
+  { cat: "Editorial", label: "High Fashion", src: IMAGES.editorial },
+  { cat: "Editorial", label: "Beauty Macro", src: IMAGES.insta2 },
+  { cat: "Editorial", label: "Bridal Detail", src: IMAGES.insta3 },
 ];
 
 const Gallery = () => {
@@ -64,10 +65,18 @@ const Gallery = () => {
             <Reveal key={`${it.label}-${i}`} delay={(i % 4) * 70}>
               <button
                 onClick={() => setLightbox(i)}
-                className={`group relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-gradient-to-br ${it.hue} hover-lift`}
+                className="group relative aspect-[3/4] w-full rounded-2xl overflow-hidden hover-lift"
               >
-                <Sparkles className="absolute top-3 right-3 w-4 h-4 text-background/70" />
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-foreground/60 to-transparent text-left">
+                <img
+                  src={it.src}
+                  alt={`${it.label} — ${it.cat} makeup look by Pinky Makeover Studio Raipur`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  width={768}
+                  height={1024}
+                />
+                <Sparkles className="absolute top-3 right-3 w-4 h-4 text-background/80 drop-shadow" />
+                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent text-left">
                   <p className="font-serif text-lg text-background">{it.label}</p>
                   <p className="text-xs text-background/80 uppercase tracking-wider">{it.cat}</p>
                 </div>
@@ -77,21 +86,27 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* BEFORE / AFTER SLIDER (simple) */}
+      {/* BEFORE / AFTER */}
       <section className="bg-gradient-soft py-24">
         <div className="container">
           <SectionTitle eyebrow="Transformations" title="Before & After" />
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              ["from-nude to-blush", "from-blush-deep to-rose-gold-deep", "Bridal"],
-              ["from-champagne to-ivory", "from-rose-gold to-blush", "Editorial"],
-            ].map(([b, a, l], i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-soft">
+              { b: IMAGES.before1, a: IMAGES.bridalSoftglam, l: "Bridal" },
+              { b: IMAGES.before2, a: IMAGES.editorial, l: "Editorial" },
+            ].map((it, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-soft bg-card">
                 <div className="grid grid-cols-2">
-                  <div className={`aspect-[4/5] bg-gradient-to-br ${b} grid place-items-center text-xs uppercase tracking-[0.3em] text-foreground/60`}>Before</div>
-                  <div className={`aspect-[4/5] bg-gradient-to-br ${a} grid place-items-center text-xs uppercase tracking-[0.3em] text-background/90`}>After</div>
+                  <div className="aspect-[4/5] relative">
+                    <img src={it.b} alt={`Before ${it.l} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover grayscale-[15%]" width={1024} height={1280} />
+                    <span className="absolute bottom-2 left-2 text-[10px] uppercase tracking-[0.3em] text-background bg-foreground/40 backdrop-blur px-2 py-1 rounded">Before</span>
+                  </div>
+                  <div className="aspect-[4/5] relative">
+                    <img src={it.a} alt={`After ${it.l} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" width={1024} height={1280} />
+                    <span className="absolute bottom-2 right-2 text-[10px] uppercase tracking-[0.3em] text-background bg-primary/70 backdrop-blur px-2 py-1 rounded">After</span>
+                  </div>
                 </div>
-                <p className="p-4 bg-card text-center font-serif text-lg">{l} Transformation</p>
+                <p className="p-4 text-center font-serif text-lg">{it.l} Transformation</p>
               </div>
             ))}
           </div>
@@ -107,13 +122,11 @@ const Gallery = () => {
             <X className="w-7 h-7" />
           </button>
           <div
-            className={`max-w-2xl w-full aspect-[3/4] rounded-2xl bg-gradient-to-br ${filtered[lightbox].hue} shadow-luxe relative animate-scale-in`}
+            className="max-w-2xl w-full aspect-[3/4] rounded-2xl shadow-luxe relative animate-scale-in overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="absolute inset-0 grid place-items-center">
-              <Sparkles className="w-20 h-20 text-background/50" />
-            </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-foreground/70 to-transparent rounded-b-2xl">
+            <img src={filtered[lightbox].src} alt={filtered[lightbox].label} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-foreground/80 to-transparent">
               <p className="font-serif text-3xl text-background">{filtered[lightbox].label}</p>
               <p className="text-background/80 text-xs uppercase tracking-[0.3em] mt-1">{filtered[lightbox].cat} Look</p>
             </div>
