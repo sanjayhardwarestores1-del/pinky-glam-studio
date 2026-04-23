@@ -279,21 +279,15 @@ const Index = () => {
         />
         <Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {[
-              "from-blush to-rose-gold",
-              "from-champagne to-blush-deep",
-              "from-rose-gold to-blush",
-              "from-blush-deep to-champagne",
-              "from-nude to-blush",
-              "from-rose-gold-deep to-rose-gold",
-            ].map((g, i) => (
+            {[IMAGES.bridalTraditional, IMAGES.insta2, IMAGES.insta3, IMAGES.insta4, IMAGES.insta5, IMAGES.flatlay].map((src, i) => (
               <a
                 key={i}
                 href={SITE.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${g} hover-lift`}
+                className="group relative aspect-square rounded-2xl overflow-hidden hover-lift"
               >
+                <img src={src} alt={`Pinky Makeover Studio Instagram post ${i + 1}`} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={600} height={600} />
                 <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition bg-foreground/40">
                   <Instagram className="w-7 h-7 text-background" />
                 </div>
