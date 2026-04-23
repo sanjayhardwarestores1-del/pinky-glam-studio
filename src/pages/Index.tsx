@@ -221,22 +221,24 @@ const Index = () => {
         <Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              ["from-nude to-blush", "from-blush-deep to-rose-gold", "Bridal Glow"],
-              ["from-champagne to-ivory", "from-rose-gold to-blush-deep", "Soft Nude"],
-              ["from-blush to-champagne", "from-rose-gold-deep to-blush", "Editorial"],
-            ].map(([b, a, label], i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-soft hover-lift">
+              { before: IMAGES.before1, after: IMAGES.bridalSoftglam, label: "Bridal Glow" },
+              { before: IMAGES.before2, after: IMAGES.party, label: "Party Glam" },
+              { before: IMAGES.before3, after: IMAGES.editorial, label: "Editorial" },
+            ].map((it, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-soft hover-lift bg-card">
                 <div className="grid grid-cols-2">
-                  <div className={`aspect-[3/4] bg-gradient-to-br ${b} grid place-items-center`}>
-                    <span className="text-xs uppercase tracking-[0.3em] text-foreground/60">Before</span>
+                  <div className="aspect-[3/4] relative">
+                    <img src={it.before} alt={`Before ${it.label} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover grayscale-[15%]" width={1024} height={1280} />
+                    <span className="absolute bottom-2 left-2 text-[10px] uppercase tracking-[0.3em] text-background bg-foreground/40 backdrop-blur px-2 py-1 rounded">Before</span>
                   </div>
-                  <div className={`aspect-[3/4] bg-gradient-to-br ${a} grid place-items-center relative`}>
-                    <Sparkles className="absolute top-3 right-3 w-4 h-4 text-background" />
-                    <span className="text-xs uppercase tracking-[0.3em] text-background/90">After</span>
+                  <div className="aspect-[3/4] relative">
+                    <img src={it.after} alt={`After ${it.label} makeup by Pinky`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" width={1024} height={1280} />
+                    <Sparkles className="absolute top-2 right-2 w-4 h-4 text-background drop-shadow" />
+                    <span className="absolute bottom-2 right-2 text-[10px] uppercase tracking-[0.3em] text-background bg-primary/70 backdrop-blur px-2 py-1 rounded">After</span>
                   </div>
                 </div>
-                <div className="p-4 bg-card text-center">
-                  <p className="font-serif text-lg">{label}</p>
+                <div className="p-4 text-center">
+                  <p className="font-serif text-lg">{it.label}</p>
                 </div>
               </div>
             ))}
