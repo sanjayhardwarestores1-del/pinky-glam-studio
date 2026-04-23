@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { stats } from "@/data/content";
 import { waLink } from "@/lib/site";
+import { IMAGES } from "@/lib/images";
 
 const About = () => (
   <>
@@ -35,13 +36,18 @@ const About = () => (
     <section className="bg-gradient-soft py-24">
       <div className="container grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
-          <div className="relative aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-blush via-champagne to-rose-gold overflow-hidden shadow-luxe">
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <Sparkles className="w-16 h-16 mx-auto text-background/60 mb-4" />
-                <p className="font-serif italic text-3xl text-background/90">Pinky</p>
-                <p className="text-background/70 text-sm mt-1">Founder & Lead Artist</p>
-              </div>
+          <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-luxe">
+            <img
+              src={IMAGES.aboutArtist}
+              alt="Pinky — luxury bridal makeup artist in Raipur"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+              width={1024}
+              height={1280}
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/70 to-transparent p-8">
+              <p className="font-serif italic text-3xl text-background">Pinky</p>
+              <p className="text-background/80 text-sm">Founder & Lead Artist</p>
             </div>
           </div>
         </Reveal>
