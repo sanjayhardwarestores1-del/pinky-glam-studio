@@ -96,15 +96,15 @@ const Index = () => {
 
           <Reveal delay={200}>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-blush via-champagne to-blush-deep shadow-luxe relative overflow-hidden">
-                <div className="absolute inset-6 rounded-[1.5rem] border border-background/40 bg-background/10 backdrop-blur-sm" />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center px-8">
-                    <Sparkles className="w-12 h-12 mx-auto text-rose-gold-deep mb-4 animate-float" />
-                    <p className="font-serif text-3xl text-foreground/80 italic">"Beauty begins<br/>the moment you decide<br/>to be yourself."</p>
-                    <p className="mt-4 text-xs uppercase tracking-[0.3em] text-foreground/60">— Coco Chanel</p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] rounded-[2rem] shadow-luxe relative overflow-hidden">
+                <img
+                  src={IMAGES.heroBride}
+                  alt="Soft-glam bridal makeup look by Pinky Makeover Studio in Raipur"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  width={1080}
+                  height={1350}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-luxe p-5 max-w-[200px] animate-float">
                 <Award className="w-6 h-6 text-primary mb-2" />
