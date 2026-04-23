@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { services } from "@/data/services";
 import { waLink } from "@/lib/site";
+import { serviceImages } from "@/lib/images";
 
 const Services = () => (
   <>
