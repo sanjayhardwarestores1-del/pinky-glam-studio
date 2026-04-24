@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
+import logo from "@/assets/logo.jpg";
 
 export const Footer = () => (
   <footer className="bg-gradient-to-b from-background to-blush/40 border-t border-border mt-24">
     <div className="container py-16 grid gap-12 md:grid-cols-4">
       <div className="md:col-span-2 space-y-4">
         <div className="flex items-center gap-2">
-          <span className="w-9 h-9 rounded-full bg-gradient-rose grid place-items-center shadow-soft">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
-          </span>
+          <img
+            src={logo}
+            alt="Pinky Makeover Studio logo"
+            className="w-10 h-10 rounded-full object-cover shadow-soft"
+          />
           <span className="font-serif text-2xl">
             Pinky <span className="text-gradient italic">Makeover Studio</span>
           </span>

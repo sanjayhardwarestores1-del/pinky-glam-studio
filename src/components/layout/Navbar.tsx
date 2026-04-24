@@ -1,8 +1,9 @@
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/site";
+import logo from "@/assets/logo.jpg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -34,9 +35,11 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="w-9 h-9 rounded-full bg-gradient-rose grid place-items-center shadow-soft">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
-          </span>
+          <img
+            src={logo}
+            alt="Pinky Makeover Studio logo"
+            className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover shadow-soft"
+          />
           <span className="font-serif text-xl md:text-2xl tracking-tight">
             Pinky <span className="text-gradient italic">Makeover</span>
           </span>
