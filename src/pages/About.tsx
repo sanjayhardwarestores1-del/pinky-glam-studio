@@ -13,7 +13,7 @@ const About = () => (
   <>
     <SEO
       title="About Pinky Makeover Studio | Luxury Makeup Artist Raipur"
-      description="Meet Pinky — Raipur's premier bridal & editorial makeup artist with 8+ years of experience and 1200+ happy clients across Chhattisgarh."
+      description="Meet Pinky — Raipur's premier bridal & editorial makeup artist with 2+ years of experience and 50+ happy clients across Chhattisgarh."
       path="/about"
     />
 
@@ -82,8 +82,8 @@ const About = () => (
           { icon: Heart, title: "Personalised Looks", text: "No template makeup. Every look is custom-designed for your features, outfit, lighting and event story." },
           { icon: Gem, title: "Premium Products", text: "MAC, Huda Beauty, Charlotte Tilbury, Kryolan, Bobbi Brown & Anastasia — only world-class brands." },
           { icon: Smile, title: "Affordable Luxury", text: "Packages starting from ₹999. Premium experience without the premium-only pricing." },
-          { icon: Award, title: "8+ Years Mastery", text: "Hundreds of brides, dozens of editorial campaigns, thousands of moments of magic." },
-          { icon: Users, title: "Trusted by 1200+ Clients", text: "5-star ratings on Google & Instagram. The kindest reviews from the kindest brides." },
+          { icon: Award, title: "2+ Years Mastery", text: "Hundreds of brides, dozens of editorial campaigns, thousands of moments of magic." },
+          { icon: Users, title: "Trusted by 50+ Clients", text: "5-star ratings on Google & Instagram. The kindest reviews from the kindest brides." },
           { icon: Sparkles, title: "Hygiene First", text: "Every brush, sponge & palette sanitised before every client. Your safety is non-negotiable." },
         ].map((f, i) => (
           <Reveal key={f.title} delay={i * 60}>
