@@ -17,7 +17,7 @@ export const services: Service[] = [
     description:
       "As Raipur's go-to bridal makeup artist, Pinky designs heirloom-worthy bridal looks using HD foundations, premium pigments and waterproof formulas. Every bride receives a personalised colour-matched look — soft glam, traditional red, regal South-Indian or modern minimalist — that photographs beautifully and lasts 14+ hours.",
     benefits: [
-      "HD + airbrush dual finish for flawless photo coverage",
+      "HD finish for flawless photo coverage",
       "Waterproof, sweatproof, 14+ hour wear",
       "Personal trial session before the big day",
       "Premium imported brands — MAC, Huda, Charlotte Tilbury, Kryolan",
@@ -73,22 +73,6 @@ export const services: Service[] = [
     ideal: "Haldi, daytime parties, family functions, office events",
     keyword: "affordable makeup artist Raipur",
     hue: "from-champagne to-ivory",
-  },
-  {
-    slug: "airbrush-makeup",
-    title: "Airbrush Makeup",
-    short: "Flawless HD finish using professional airbrush technology.",
-    description:
-      "Airbrush makeup services delivered with hospital-grade precision. The micro-droplet application gives an invisible, second-skin finish that's ideal for bridal photography, video and 4K shoots.",
-    benefits: [
-      "Pore-less, photo-ready HD finish",
-      "Lasts 16+ hours without touch-ups",
-      "Hypoallergenic & lightweight",
-      "Ideal for HD video and 4K shoots",
-    ],
-    ideal: "Brides, models, fashion photography, film & TV",
-    keyword: "airbrush makeup services Raipur",
-    hue: "from-rose-gold to-blush-deep",
   },
   {
     slug: "editorial-makeup",

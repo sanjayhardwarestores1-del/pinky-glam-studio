@@ -55,8 +55,8 @@ const About = () => (
           <div className="space-y-5">
             <h2 className="font-serif text-4xl md:text-5xl">Meet the Artist</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Trained in HD, airbrush and avant-garde editorial techniques, Pinky has spent the last
-              eight years perfecting the craft of soft-glam bridal and contemporary editorial makeup.
+              Trained in HD and avant-garde editorial techniques, Pinky has spent the last
+              two years perfecting the craft of soft-glam bridal and contemporary editorial makeup.
               Her signature is luminous, second-skin makeup that enhances — never masks — your
               features.
             </p>
@@ -80,7 +80,7 @@ const About = () => (
       <div className="grid md:grid-cols-3 gap-6">
         {[
           { icon: Heart, title: "Personalised Looks", text: "No template makeup. Every look is custom-designed for your features, outfit, lighting and event story." },
-          { icon: Gem, title: "Premium Products", text: "MAC, Huda Beauty, Charlotte Tilbury, Kryolan, Bobbi Brown, Anastasia & Temptu airbrush — only world-class brands." },
+          { icon: Gem, title: "Premium Products", text: "MAC, Huda Beauty, Charlotte Tilbury, Kryolan, Bobbi Brown & Anastasia — only world-class brands." },
           { icon: Smile, title: "Affordable Luxury", text: "Packages starting from ₹999. Premium experience without the premium-only pricing." },
           { icon: Award, title: "8+ Years Mastery", text: "Hundreds of brides, dozens of editorial campaigns, thousands of moments of magic." },
           { icon: Users, title: "Trusted by 1200+ Clients", text: "5-star ratings on Google & Instagram. The kindest reviews from the kindest brides." },

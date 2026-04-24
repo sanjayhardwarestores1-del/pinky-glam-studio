@@ -11,7 +11,7 @@ type Cat = typeof categories[number];
 const items: { cat: Exclude<Cat, "All">; label: string; src: string }[] = [
   { cat: "Bridal", label: "Traditional Red Bride", src: IMAGES.bridalTraditional },
   { cat: "Bridal", label: "Soft Glam Bride", src: IMAGES.bridalSoftglam },
-  { cat: "Bridal", label: "Reception Diva", src: IMAGES.airbrush },
+  { cat: "Bridal", label: "Reception Diva", src: IMAGES.bridalSoftglam },
   { cat: "Party", label: "Cocktail Glam", src: IMAGES.party },
   { cat: "Party", label: "Sangeet Sparkle", src: IMAGES.insta5 },
   { cat: "Party", label: "Birthday Glow", src: IMAGES.light },

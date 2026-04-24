@@ -47,7 +47,7 @@ export const stats = [
 export const faqs = [
   {
     q: "How long does bridal makeup last?",
-    a: "Our HD + airbrush bridal makeup lasts 14–16 hours with zero touch-ups required. We use waterproof, sweat-resistant premium formulas designed for Indian wedding marathons.",
+    a: "Our HD bridal makeup lasts 14–16 hours with zero touch-ups required. We use waterproof, sweat-resistant premium formulas designed for Indian wedding marathons.",
   },
   {
     q: "Do you travel for destination weddings and outstation bookings?",
@@ -55,7 +55,7 @@ export const faqs = [
   },
   {
     q: "What products do you use?",
-    a: "We use only premium, professional-grade brands — MAC, Huda Beauty, Charlotte Tilbury, Kryolan, Bobbi Brown, Anastasia Beverly Hills and Temptu airbrush systems. All products are hygienically sanitised between every client.",
+    a: "We use only premium, professional-grade brands — MAC, Huda Beauty, Charlotte Tilbury, Kryolan, Bobbi Brown and Anastasia Beverly Hills. All products are hygienically sanitised between every client.",
   },
   {
     q: "What are your packages priced at?",

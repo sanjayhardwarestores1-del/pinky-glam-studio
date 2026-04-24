@@ -38,7 +38,7 @@ const Index = () => {
     <>
       <SEO
         title="Pinky Makeover Studio | Best Bridal Makeup Artist in Raipur"
-        description="Premium bridal, party, airbrush & editorial makeup artist in Raipur, Chhattisgarh. HD long-lasting makeup. Book on WhatsApp today."
+        description="Premium bridal, party, nude & editorial makeup artist in Raipur, Chhattisgarh. HD long-lasting makeup. Book on WhatsApp today."
         path="/"
         schema={schema}
       />
@@ -64,7 +64,7 @@ const Index = () => {
               with Luxury Makeup
             </h1>
             <p className="text-lg text-foreground/75 max-w-lg leading-relaxed">
-              Bridal · Party · Airbrush · Nude · Editorial — handcrafted soft-glam looks
+              Bridal · Party · Nude · Light · Editorial — handcrafted soft-glam looks
               by <span className="font-medium text-foreground">Pinky Makeover Studio</span>, Raipur's most-loved makeup artist.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -160,7 +160,7 @@ const Index = () => {
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               For over two years, Pinky has been crafting unforgettable bridal and editorial
-              looks across Raipur and Chhattisgarh. Trained in HD, airbrush and avant-garde
+              looks across Raipur and Chhattisgarh. Trained in HD and avant-garde
               editorial techniques, she pairs world-class products with a deeply personal,
               intuitive approach to every client.
             </p>
@@ -181,7 +181,7 @@ const Index = () => {
           <SectionTitle
             eyebrow="Signature Services"
             title="Looks designed for every chapter"
-            subtitle="Bridal, party, airbrush, nude and editorial — each service is personalised, premium and crafted to last."
+            subtitle="Bridal, party, nude, light and editorial — each service is personalised, premium and crafted to last."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
