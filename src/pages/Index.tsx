@@ -108,7 +108,7 @@ const Index = () => {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-luxe p-5 max-w-[200px] animate-float">
                 <Award className="w-6 h-6 text-primary mb-2" />
-                <p className="font-serif text-2xl">8+ Years</p>
+                <p className="font-serif text-2xl">2+ Years</p>
                 <p className="text-xs text-muted-foreground">of Bridal Artistry</p>
               </div>
               <div className="absolute -top-4 -right-4 bg-gradient-rose text-primary-foreground rounded-2xl shadow-luxe p-4 animate-float" style={{ animationDelay: "1.2s" }}>
@@ -159,7 +159,7 @@ const Index = () => {
               Where artistry meets <span className="text-gradient italic">elegance</span>.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              For over eight years, Pinky has been crafting unforgettable bridal and editorial
+              For over two years, Pinky has been crafting unforgettable bridal and editorial
               looks across Raipur and Chhattisgarh. Trained in HD, airbrush and avant-garde
               editorial techniques, she pairs world-class products with a deeply personal,
               intuitive approach to every client.
