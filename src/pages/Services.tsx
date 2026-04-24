@@ -11,8 +11,8 @@ import { serviceImages } from "@/lib/images";
 const Services = () => (
   <>
     <SEO
-      title="Makeup Services in Raipur | Bridal, Airbrush, Editorial — Pinky Makeover"
-      description="Premium bridal makeup, party makeup, airbrush, nude & editorial makeup services in Raipur. Long-lasting HD makeup by Pinky. Packages starting from ₹999."
+      title="Makeup Services in Raipur | Bridal, Party, Editorial — Pinky Makeover"
+      description="Premium bridal makeup, party makeup, nude, light & editorial makeup services in Raipur. Long-lasting HD makeup by Pinky. Packages starting from ₹999."
       path="/services"
     />
 

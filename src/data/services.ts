@@ -75,22 +75,6 @@ export const services: Service[] = [
     hue: "from-champagne to-ivory",
   },
   {
-    slug: "airbrush-makeup",
-    title: "Airbrush Makeup",
-    short: "Flawless HD finish using professional airbrush technology.",
-    description:
-      "Airbrush makeup services delivered with hospital-grade precision. The micro-droplet application gives an invisible, second-skin finish that's ideal for bridal photography, video and 4K shoots.",
-    benefits: [
-      "Pore-less, photo-ready HD finish",
-      "Lasts 16+ hours without touch-ups",
-      "Hypoallergenic & lightweight",
-      "Ideal for HD video and 4K shoots",
-    ],
-    ideal: "Brides, models, fashion photography, film & TV",
-    keyword: "airbrush makeup services Raipur",
-    hue: "from-rose-gold to-blush-deep",
-  },
-  {
     slug: "editorial-makeup",
     title: "Editorial Makeup",
     short: "Avant-garde editorial looks for fashion shoots & magazines.",

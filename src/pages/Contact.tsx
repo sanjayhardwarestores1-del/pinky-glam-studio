@@ -53,7 +53,7 @@ const Contact = () => {
     <>
       <SEO
         title="Contact Pinky Makeover Studio | Book Bridal Makeup in Raipur"
-        description="Book Pinky Makeover Studio for bridal, party, airbrush & editorial makeup in Raipur. WhatsApp +91 99077 56210 or fill the inquiry form."
+        description="Book Pinky Makeover Studio for bridal, party, nude & editorial makeup in Raipur. WhatsApp +91 99077 56210 or fill the inquiry form."
         path="/contact"
       />
 

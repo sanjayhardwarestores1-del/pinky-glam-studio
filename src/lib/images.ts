@@ -5,7 +5,6 @@ import lookBridalSoftglam from "@/assets/look-bridal-softglam.jpg";
 import lookParty from "@/assets/look-party.jpg";
 import lookNude from "@/assets/look-nude.jpg";
 import lookEditorial from "@/assets/look-editorial.jpg";
-import lookAirbrush from "@/assets/look-airbrush.jpg";
 import lookLight from "@/assets/look-light.jpg";
 import flatlay from "@/assets/flatlay-products.jpg";
 import before1 from "@/assets/before-1.jpg";
@@ -24,11 +23,10 @@ export const IMAGES = {
   party: lookParty,
   nude: lookNude,
   editorial: lookEditorial,
-  airbrush: lookAirbrush,
   light: lookLight,
   before1,
   before2,
-  before3: lookNude, // reused as a natural-look reference
+  before3: lookNude,
   insta2,
   insta3,
   insta4,
@@ -41,6 +39,5 @@ export const serviceImages: Record<string, string> = {
   "party-makeup": lookParty,
   "nude-makeup": lookNude,
   "light-makeup": lookLight,
-  "airbrush-makeup": lookAirbrush,
   "editorial-makeup": lookEditorial,
 };
