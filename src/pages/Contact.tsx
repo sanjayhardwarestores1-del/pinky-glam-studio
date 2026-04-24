@@ -1,59 +1,16 @@
-import { useState } from "react";
-import { z } from "zod";
-import { Phone, Mail, MapPin, MessageCircle, Send, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 import { Reveal } from "@/components/Reveal";
 import { SITE, waLink } from "@/lib/site";
 
-const inquirySchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(80),
-  phone: z.string().trim().min(7, "Enter a valid phone").max(20),
-  event: z.string().trim().min(2, "Event type is required").max(50),
-  date: z.string().max(20).optional().or(z.literal("")),
-  budget: z.string().max(40).optional().or(z.literal("")),
-  message: z.string().max(800).optional().or(z.literal("")),
-});
-
 const Contact = () => {
-  const { toast } = useToast();
-  const [submitting, setSubmitting] = useState(false);
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fd.entries());
-    const parsed = inquirySchema.safeParse(data);
-    if (!parsed.success) {
-      toast({ title: "Please check your details", description: parsed.error.errors[0].message, variant: "destructive" });
-      return;
-    }
-    setSubmitting(true);
-    const v = parsed.data;
-    const msg =
-      `Hi Pinky! I'd like to book a makeup service.\n\n` +
-      `Name: ${v.name}\nPhone: ${v.phone}\nEvent: ${v.event}\n` +
-      (v.date ? `Date: ${v.date}\n` : "") +
-      (v.budget ? `Budget: ${v.budget}\n` : "") +
-      (v.message ? `\nMessage: ${v.message}` : "");
-    window.open(waLink(msg), "_blank", "noopener,noreferrer");
-    setTimeout(() => {
-      toast({ title: "Inquiry sent!", description: "Continue the conversation on WhatsApp." });
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 400);
-  };
-
   return (
     <>
       <SEO
         title="Contact Pinky Makeover Studio | Book Bridal Makeup in Raipur"
-        description="Book Pinky Makeover Studio for bridal, party, nude & editorial makeup in Raipur. WhatsApp +91 99077 56210 or fill the inquiry form."
+        description="Book Pinky Makeover Studio for bridal, party, nude & editorial makeup in Raipur. WhatsApp +91 99077 56210."
         path="/contact"
       />
 
@@ -65,55 +22,15 @@ const Contact = () => {
               Let's create something <span className="text-gradient italic">beautiful</span>.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Tell us about your event and we'll personally reply on WhatsApp with package details,
+              Tell us about your event on WhatsApp and we'll personally reply with package details,
               availability and our portfolio.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-5 gap-10 mt-16">
-          <Reveal className="lg:col-span-3">
-            <Card className="p-8 md:p-10 border-border/60 shadow-soft">
-              <h2 className="font-serif text-3xl mb-6">Inquiry Form</h2>
-              <form onSubmit={onSubmit} className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name *</Label>
-                  <Input id="name" name="name" required maxLength={80} placeholder="Your full name" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">WhatsApp / Phone *</Label>
-                  <Input id="phone" name="phone" required maxLength={20} placeholder="+91 9XXXXXXXXX" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="event">Event Type *</Label>
-                  <Input id="event" name="event" required maxLength={50} placeholder="Bridal, Party, Engagement…" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="date">Event Date</Label>
-                  <Input id="date" name="date" type="date" />
-                </div>
-                <div className="space-y-2 sm:col-span-2">
-                  <Label htmlFor="budget">Budget Range</Label>
-                  <Input id="budget" name="budget" maxLength={40} placeholder="e.g. ₹5,000 – ₹15,000" />
-                </div>
-                <div className="space-y-2 sm:col-span-2">
-                  <Label htmlFor="message">Tell us more (optional)</Label>
-                  <Textarea id="message" name="message" maxLength={800} rows={4} placeholder="Share venue, look inspiration, special requests…" />
-                </div>
-                <div className="sm:col-span-2">
-                  <Button type="submit" variant="luxe" size="lg" disabled={submitting} className="w-full sm:w-auto">
-                    {submitting ? "Sending…" : <>Send Inquiry <Send className="w-4 h-4" /></>}
-                  </Button>
-                  <p className="text-xs text-muted-foreground mt-3">
-                    Your inquiry opens a pre-filled WhatsApp chat with Pinky.
-                  </p>
-                </div>
-              </form>
-            </Card>
-          </Reveal>
-
-          <Reveal delay={120} className="lg:col-span-2 space-y-4">
-            <Card className="p-7 hover-lift border-border/60">
+        <div className="grid md:grid-cols-2 gap-6 mt-16">
+          <Reveal>
+            <Card className="p-7 hover-lift border-border/60 h-full">
               <MessageCircle className="w-7 h-7 text-primary mb-3" />
               <h3 className="font-serif text-2xl mb-1">WhatsApp Quick Chat</h3>
               <p className="text-sm text-muted-foreground mb-4">Fastest way to reach us — usually replies within minutes.</p>
@@ -121,8 +38,10 @@ const Contact = () => {
                 <a href={waLink()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
               </Button>
             </Card>
+          </Reveal>
 
-            <Card className="p-7 border-border/60 space-y-4">
+          <Reveal delay={120}>
+            <Card className="p-7 border-border/60 space-y-4 h-full">
               <div className="flex gap-3">
                 <Phone className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
