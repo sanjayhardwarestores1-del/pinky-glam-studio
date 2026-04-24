@@ -19,7 +19,7 @@ export const Footer = () => (
         </div>
         <p className="text-muted-foreground max-w-md leading-relaxed">
           Raipur's trusted luxury makeup artist for brides, parties, fashion shoots and editorials.
-          Personalised soft-glam looks crafted with premium HD & airbrush products.
+          Personalised soft-glam looks crafted with premium HD makeup products.
         </p>
         <a
           href={SITE.instagram}

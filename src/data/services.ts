@@ -17,7 +17,7 @@ export const services: Service[] = [
     description:
       "As Raipur's go-to bridal makeup artist, Pinky designs heirloom-worthy bridal looks using HD foundations, premium pigments and waterproof formulas. Every bride receives a personalised colour-matched look — soft glam, traditional red, regal South-Indian or modern minimalist — that photographs beautifully and lasts 14+ hours.",
     benefits: [
-      "HD + airbrush dual finish for flawless photo coverage",
+      "HD finish for flawless photo coverage",
       "Waterproof, sweatproof, 14+ hour wear",
       "Personal trial session before the big day",
       "Premium imported brands — MAC, Huda, Charlotte Tilbury, Kryolan",

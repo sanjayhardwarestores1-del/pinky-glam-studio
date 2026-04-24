@@ -160,7 +160,7 @@ const Index = () => {
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               For over two years, Pinky has been crafting unforgettable bridal and editorial
-              looks across Raipur and Chhattisgarh. Trained in HD, airbrush and avant-garde
+              looks across Raipur and Chhattisgarh. Trained in HD and avant-garde
               editorial techniques, she pairs world-class products with a deeply personal,
               intuitive approach to every client.
             </p>
