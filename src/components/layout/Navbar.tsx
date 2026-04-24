@@ -41,7 +41,7 @@ export const Navbar = () => {
             className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover shadow-soft"
           />
           <span className="font-serif text-xl md:text-2xl tracking-tight">
-            Pinky <span className="text-gradient italic">Makeover</span>
+            Pinky <span className="text-gradient italic">Makeover Studio</span>
           </span>
         </Link>
 
