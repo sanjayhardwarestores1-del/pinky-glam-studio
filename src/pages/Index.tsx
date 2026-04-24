@@ -89,7 +89,7 @@ const Index = () => {
                 <div className="flex text-primary">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                 </div>
-                <p className="text-xs text-muted-foreground mt-1">Loved by 1200+ brides & divas</p>
+                <p className="text-xs text-muted-foreground mt-1">Loved by 50+ brides & divas</p>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ const Index = () => {
               </div>
               <div className="absolute -top-4 -right-4 bg-gradient-rose text-primary-foreground rounded-2xl shadow-luxe p-4 animate-float" style={{ animationDelay: "1.2s" }}>
                 <Heart className="w-5 h-5 mb-1 fill-current" />
-                <p className="text-xs font-medium leading-tight">500+ Brides<br/>Beautified</p>
+                <p className="text-xs font-medium leading-tight">50+<br/>Beautified</p>
               </div>
             </div>
           </Reveal>
