@@ -39,8 +39,8 @@ export const testimonials = [
 
 export const stats = [
   { number: "2+", label: "Years of Artistry" },
-  { number: "1200+", label: "Happy Clients" },
-  { number: "500+", label: "Brides Beautified" },
+  { number: "50+", label: "Happy Clients" },
+  { number: "50+", label: "Brides Beautified" },
   { number: "50+", label: "Editorial Shoots" },
 ];
 
