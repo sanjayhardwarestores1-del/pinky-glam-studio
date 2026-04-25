@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Sparkles, X } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Reveal } from "@/components/Reveal";
-import { SectionTitle } from "@/components/SectionTitle";
+
 import { IMAGES } from "@/lib/images";
 
 const categories = ["All", "Bridal", "Party", "Nude", "Light", "Editorial"] as const;
