@@ -79,33 +79,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* BEFORE / AFTER */}
-      <section className="bg-gradient-soft py-24">
-        <div className="container">
-          <SectionTitle eyebrow="Transformations" title="Before & After" />
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              { b: IMAGES.before1, a: IMAGES.bridalSoftglam, l: "Bridal" },
-              { b: IMAGES.before2, a: IMAGES.editorial, l: "Editorial" },
-            ].map((it, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-soft bg-card">
-                <div className="grid grid-cols-2">
-                  <div className="aspect-[4/5] relative">
-                    <img src={it.b} alt={`Before ${it.l} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover grayscale-[15%]" width={1024} height={1280} />
-                    <span className="absolute bottom-2 left-2 text-[10px] uppercase tracking-[0.3em] text-background bg-foreground/40 backdrop-blur px-2 py-1 rounded">Before</span>
-                  </div>
-                  <div className="aspect-[4/5] relative">
-                    <img src={it.a} alt={`After ${it.l} makeup`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" width={1024} height={1280} />
-                    <span className="absolute bottom-2 right-2 text-[10px] uppercase tracking-[0.3em] text-background bg-primary/70 backdrop-blur px-2 py-1 rounded">After</span>
-                  </div>
-                </div>
-                <p className="p-4 text-center font-serif text-lg">{it.l} Transformation</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {lightbox !== null && filtered[lightbox] && (
         <div
           className="fixed inset-0 z-50 bg-foreground/85 backdrop-blur-md grid place-items-center p-6 animate-fade-in"
