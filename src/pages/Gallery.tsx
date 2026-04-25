@@ -12,6 +12,7 @@ const items: { cat: Exclude<Cat, "All">; label: string; src: string }[] = [
   { cat: "Bridal", label: "Traditional Red Bride", src: IMAGES.bridalTraditional },
   { cat: "Party", label: "Cocktail Glam", src: IMAGES.party },
   { cat: "Nude", label: "Engagement Nude", src: IMAGES.nude },
+  { cat: "Light", label: "Soft Light Look", src: IMAGES.light },
   { cat: "Editorial", label: "High Fashion", src: IMAGES.editorial },
 ];
 
