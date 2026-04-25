@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { IMAGES } from "@/lib/images";
 
-const categories = ["All", "Bridal", "Party", "Nude", "Editorial"] as const;
+const categories = ["All", "Bridal", "Party", "Nude", "Light", "Editorial"] as const;
 type Cat = typeof categories[number];
 
 const items: { cat: Exclude<Cat, "All">; label: string; src: string }[] = [
