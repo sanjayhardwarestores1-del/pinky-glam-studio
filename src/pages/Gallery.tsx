@@ -10,17 +10,9 @@ type Cat = typeof categories[number];
 
 const items: { cat: Exclude<Cat, "All">; label: string; src: string }[] = [
   { cat: "Bridal", label: "Traditional Red Bride", src: IMAGES.bridalTraditional },
-  { cat: "Bridal", label: "Soft Glam Bride", src: IMAGES.bridalSoftglam },
-  { cat: "Bridal", label: "Reception Diva", src: IMAGES.bridalSoftglam },
   { cat: "Party", label: "Cocktail Glam", src: IMAGES.party },
-  { cat: "Party", label: "Sangeet Sparkle", src: IMAGES.insta5 },
-  { cat: "Party", label: "Birthday Glow", src: IMAGES.light },
   { cat: "Nude", label: "Engagement Nude", src: IMAGES.nude },
-  { cat: "Nude", label: "Pre-Wedding Glow", src: IMAGES.before1 },
-  { cat: "Nude", label: "Minimal Bride", src: IMAGES.before2 },
   { cat: "Editorial", label: "High Fashion", src: IMAGES.editorial },
-  { cat: "Editorial", label: "Beauty Macro", src: IMAGES.insta2 },
-  { cat: "Editorial", label: "Bridal Detail", src: IMAGES.insta3 },
 ];
 
 const Gallery = () => {
